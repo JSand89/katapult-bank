@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Bank</h1>
+<p>Bank: {{bank.name}}</p>
+<a href="{{ bank.get_absolute_url }}/delete/" type="button" class="btn btn-danger">Delete</a>
+<a href="{{ bank.get_absolute_url }}/update/" type="button" class="btn btn-primary">Update</a>
+
+{% endblock %}
