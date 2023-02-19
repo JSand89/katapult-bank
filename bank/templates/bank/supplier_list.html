@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Supplier List</h1>
+  {% if supplier_list %}
+  <ul>
+    {% for supplier in supplier_list %}
+      <li>
+        <a href="{{ supplier.get_absolute_url }}">{{ supplier.name }}</a> 
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no Supplier in the register.</p>
+  {% endif %}
+  <a href="{% url 'supplier-create' %}" type="button" class="btn btn-success">Add</a>
+  {% endblock %}

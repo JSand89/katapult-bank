@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Supplier</h1>
+<p>Name Supplier: {{supplier.name}}</p>
+<p>Nit: {{supplier.nit}}</p>
+<p>Contact Person: {{supplier.contact_person_name}}</p>
+<p>Cell phone: {{supplier.contact_person_phone}}</p>
+{% if bank_accounts %}
+<ul>
+  {% for bank_account in bank_accounts %}
+    <li>
+     {{ bank_account.name }} :  {{ bank_account.account_number}}
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+  <p>There are no Bank in the register.</p>
+{% endif %}
+
+
+
+
+{% comment %} <a href="{{ bank.get_absolute_url }}/delete/" type="button" class="btn btn-danger">Delete</a>
+<a href="{{ bank.get_absolute_url }}/update/" type="button" class="btn btn-primary">Update</a> {% endcomment %}
+
+{% endblock %}
